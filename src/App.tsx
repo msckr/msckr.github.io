@@ -23,7 +23,18 @@ export default function App(){
     <div className="progress" style={{width:`${progress}%`}}/>
     <header><a href="#home" className="logo">MINSOO<sup>©</sup></a><nav className={menu?'open':''}>{[['About','#about'],['Stack','#stack'],['Projects','#projects'],['Contact','#contact']].map(([t,h])=><a href={h} onClick={()=>setMenu(false)} key={t}>{t}</a>)}</nav><button aria-label="메뉴" onClick={()=>setMenu(!menu)}>{menu?<X/>:<Menu/>}</button></header>
     <main>
-      <section className="hero" id="home"><div className="heroMeta"><span>FRONTEND / FULL STACK</span><span>SEOUL, KR · 2026</span></div><div className="nameRail" aria-hidden="true"><span>CHO MINSOO</span><span>CHO MINSOO</span></div><div className="heroTitle"><p>안녕하세요. 저는</p><h1>실시간 데이터와<br/><em>상태 관리를 설계하는</em><br/>개발자 조민수입니다.</h1></div><div className="heroFoot"><p>React와 TypeScript 기반의 프론트엔드부터<br/>Java·Spring 백엔드까지, 제품의 전체 흐름을 만듭니다.</p><a href="#about" className="scroll"><ArrowDown/>SCROLL TO EXPLORE</a></div></section>
+      <section className="hero" id="home">
+        <div className="heroMeta"><span>PORTFOLIO / 2026</span><span>SEOUL, KR</span></div>
+        <div className="heroAside" aria-hidden="true"><span>MIN</span><i/><span>SOO</span></div>
+        <div className="heroTitle">
+          <div className="available"><i/> OPEN TO NEW OPPORTUNITIES</div>
+          <p>Frontend / Full Stack Developer</p>
+          <h1>실시간 데이터와<br/><em>상태 관리를</em> 설계하는<br/>개발자 조민수입니다.</h1>
+        </div>
+        <div className="heroTech" aria-label="주요 기술"><span>React</span><span>TypeScript</span><span>Java · Spring</span><span>WebSocket</span></div>
+        <div className="heroFoot"><p>화면과 서버 사이의 데이터 흐름을 이해하고,<br/>운영과 유지보수까지 고려한 제품을 만듭니다.</p><a href="#about" className="scroll"><span>EXPLORE</span><i><ArrowDown/></i></a></div>
+        <div className="heroMark" aria-hidden="true">M</div>
+      </section>
 
       <section className="intro" id="about"><div className="kicker">01 / ABOUT</div><div className="introGrid"><h2>화면 너머의<br/><span>흐름을 봅니다.</span></h2><div><p className="lead">요구사항을 데이터 구조로 바꾸고, 서버 상태와 화면 상태의 책임을 명확하게 나눕니다.</p><p>WebSocket 기반 실시간 데이터 처리, PostgreSQL 조회·업무 로직, 공통 컴포넌트 설계 경험을 바탕으로 운영과 유지보수를 고려한 구조를 구현합니다.</p><div className="career"><strong>2025.06 — NOW</strong><span>주식회사 유더블유에스<br/>기업부설연구소 · 풀스택 개발자</span></div></div></div></section>
 
