@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowUpRight, Code2, Mail, Menu, X } from 'lucide-react'
+﻿import { ArrowDown, ArrowUpRight, Code2, Mail, Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 type SkillKey = 'frontend' | 'backend' | 'other'
@@ -21,9 +21,9 @@ export default function App(){
   useEffect(()=>{const onScroll=()=>setProgress(scrollY/(document.documentElement.scrollHeight-innerHeight)*100);onScroll();addEventListener('scroll',onScroll,{passive:true});return()=>removeEventListener('scroll',onScroll)},[])
   return <>
     <div className="progress" style={{width:`${progress}%`}}/>
-    <header><a href="#home" className="logo">MINSU<sup>©</sup></a><nav className={menu?'open':''}>{[['About','#about'],['Stack','#stack'],['Projects','#projects'],['Contact','#contact']].map(([t,h])=><a href={h} onClick={()=>setMenu(false)} key={t}>{t}</a>)}</nav><button aria-label="메뉴" onClick={()=>setMenu(!menu)}>{menu?<X/>:<Menu/>}</button></header>
+    <header><a href="#home" className="logo">MINSOO<sup>©</sup></a><nav className={menu?'open':''}>{[['About','#about'],['Stack','#stack'],['Projects','#projects'],['Contact','#contact']].map(([t,h])=><a href={h} onClick={()=>setMenu(false)} key={t}>{t}</a>)}</nav><button aria-label="메뉴" onClick={()=>setMenu(!menu)}>{menu?<X/>:<Menu/>}</button></header>
     <main>
-      <section className="hero" id="home"><div className="heroMeta"><span>FRONTEND / FULL STACK</span><span>SEOUL, KR · 2026</span></div><div className="nameRail" aria-hidden="true"><span>CHO MINSU</span><span>CHO MINSU</span></div><div className="heroTitle"><p>안녕하세요. 저는</p><h1>실시간 데이터와<br/><em>상태 관리를 설계하는</em><br/>개발자 조민수입니다.</h1></div><div className="heroFoot"><p>React와 TypeScript 기반의 프론트엔드부터<br/>Java·Spring 백엔드까지, 제품의 전체 흐름을 만듭니다.</p><a href="#about" className="scroll"><ArrowDown/>SCROLL TO EXPLORE</a></div></section>
+      <section className="hero" id="home"><div className="heroMeta"><span>FRONTEND / FULL STACK</span><span>SEOUL, KR · 2026</span></div><div className="nameRail" aria-hidden="true"><span>CHO MINSOO</span><span>CHO MINSOO</span></div><div className="heroTitle"><p>안녕하세요. 저는</p><h1>실시간 데이터와<br/><em>상태 관리를 설계하는</em><br/>개발자 조민수입니다.</h1></div><div className="heroFoot"><p>React와 TypeScript 기반의 프론트엔드부터<br/>Java·Spring 백엔드까지, 제품의 전체 흐름을 만듭니다.</p><a href="#about" className="scroll"><ArrowDown/>SCROLL TO EXPLORE</a></div></section>
 
       <section className="intro" id="about"><div className="kicker">01 / ABOUT</div><div className="introGrid"><h2>화면 너머의<br/><span>흐름을 봅니다.</span></h2><div><p className="lead">요구사항을 데이터 구조로 바꾸고, 서버 상태와 화면 상태의 책임을 명확하게 나눕니다.</p><p>WebSocket 기반 실시간 데이터 처리, PostgreSQL 조회·업무 로직, 공통 컴포넌트 설계 경험을 바탕으로 운영과 유지보수를 고려한 구조를 구현합니다.</p><div className="career"><strong>2025.06 — NOW</strong><span>주식회사 유더블유에스<br/>기업부설연구소 · 풀스택 개발자</span></div></div></div></section>
 
@@ -31,7 +31,8 @@ export default function App(){
 
       <section className="projects" id="projects"><div className="projectIntro"><div className="kicker">03 / SELECTED PROJECTS</div><h2>문제를 발견하고,<br/>구조로 해결한 기록.</h2></div>{projects.map((p,i)=><article className={`project ${p.accent}`} key={p.title}><div className="projectSticky"><span>{p.index}</span><p>{p.type}</p></div><div className="projectBody"><div className="projectMeta"><span>{p.period}</span><span>{p.role}</span></div><h3>{p.title}</h3><p className="summary">{p.summary}</p><p className="projectStack">{p.stack}</p><ul>{p.points.map(x=><li key={x}>{x}</li>)}</ul>{p.link&&<a href={p.link} target="_blank" rel="noreferrer">VIEW REPOSITORY <ArrowUpRight/></a>}<span className="projectCount">{String(i+1).padStart(2,'0')} / {String(projects.length).padStart(2,'0')}</span></div></article>)}</section>
 
-      <section className="contact" id="contact"><div className="kicker light">04 / CONTACT</div><p>새로운 제품과 어려운 문제에 대해<br/>함께 이야기하고 싶습니다.</p><a href="mailto:mschoyb@naver.com"><Mail/>mschoyb@naver.com<ArrowUpRight/></a><div className="contactFoot"><span>© 2026 MINSU CHO</span><a href="https://github.com/msckr" target="_blank" rel="noreferrer"><Code2/>GITHUB</a></div></section>
+      <section className="contact" id="contact"><div className="kicker light">04 / CONTACT</div><p>새로운 제품과 어려운 문제에 대해<br/>함께 이야기하고 싶습니다.</p><a href="mailto:mschoyb@naver.com"><Mail/>mschoyb@naver.com<ArrowUpRight/></a><div className="contactFoot"><span>© 2026 MINSOO CHO</span><a href="https://github.com/msckr" target="_blank" rel="noreferrer"><Code2/>GITHUB</a></div></section>
     </main>
   </>
 }
+
