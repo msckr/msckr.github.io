@@ -21,14 +21,9 @@ export default function App(){
   useEffect(()=>{const onScroll=()=>setProgress(scrollY/(document.documentElement.scrollHeight-innerHeight)*100);onScroll();addEventListener('scroll',onScroll,{passive:true});return()=>removeEventListener('scroll',onScroll)},[])
   return <>
     <div className="progress" style={{width:`${progress}%`}}/>
-    <header><a href="#home" className="logo">MIN SOO CHO</a><nav className={menu?'open':''}>{[['About','#about'],['Strength','#stack'],['Career','#career'],['Projects','#projects'],['Contact','#contact']].map(([t,h])=><a href={h} onClick={()=>setMenu(false)} key={t}>{t}</a>)}</nav><button aria-label="메뉴" onClick={()=>setMenu(!menu)}>{menu?<X/>:<Menu/>}</button></header>
+    <header><a href="#home" className="logo">Front-end Developer</a><nav className={menu?'open':''}>{[['Home','#home'],['Skills','#stack'],['Career','#career'],['Projects','#projects'],['Contact','#contact']].map(([t,h])=><a href={h} onClick={()=>setMenu(false)} key={t}>{t}</a>)}</nav><img className="railProfile" src="https://github.com/msckr.png" alt="조민수 프로필"/><button aria-label="메뉴" onClick={()=>setMenu(!menu)}>{menu?<X/>:<Menu/>}</button></header>
     <main>
-      <section className="hero" id="home">
-        <div className="heroName" aria-label="Min Soo Cho"><span>MIN</span><span>SOO</span><span>CHO</span></div>
-        <div className="heroRoles" aria-hidden="true"><span>Frontend</span><span>React</span><span>TypeScript</span><span>Developer</span></div>
-        <div className="heroProfile"><strong>Developer</strong><p>조민수 · Frontend / Full Stack<br/>실시간 데이터와 상태 관리를 설계합니다.</p><div><a href="mailto:mschoyb@naver.com">EMAIL</a><a href="https://github.com/msckr" target="_blank" rel="noreferrer">GITHUB</a></div></div>
-        <a href="#about" className="scroll"><span>SCROLL</span><i><ArrowDown/></i></a>
-      </section>
+      <section className="hero" id="home"><div className="profileHead"><div><h1>조민수</h1><span>MIN SOO CHO</span></div><p>Frontend / Full Stack Developer</p><div className="profileLinks"><a href="mailto:mschoyb@naver.com">EMAIL</a><a href="https://github.com/msckr" target="_blank" rel="noreferrer">GITHUB</a></div></div><div className="heroCopy"><strong>실시간 데이터와 상태 관리를 설계하는 개발자</strong><p>안녕하세요. React와 TypeScript 기반 프론트엔드와 Java·Spring 기반 백엔드를 함께 개발해 온 조민수입니다.</p><p>화면 요구사항을 기준으로 REST API와 데이터 구조를 설계하고, React Query와 Zustand를 활용해 서버 상태와 화면 전역 상태의 책임을 분리합니다.</p></div></section>
 
       <section className="intro" id="about"><div className="introGrid"><h2>화면 너머의<br/><span>흐름을 봅니다.</span></h2><div><p className="lead">요구사항을 데이터 구조로 바꾸고, 서버 상태와 화면 상태의 책임을 명확하게 나눕니다.</p><p>WebSocket 기반 실시간 데이터 처리, PostgreSQL 조회·업무 로직, 공통 컴포넌트 설계 경험을 바탕으로 운영과 유지보수를 고려한 구조를 구현합니다.</p><div className="career"><strong>2025.06 — NOW</strong><span>주식회사 유더블유에스<br/>기업부설연구소 · 풀스택 개발자</span></div></div></div></section>
 
