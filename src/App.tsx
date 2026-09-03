@@ -21,24 +21,20 @@ export default function App(){
   useEffect(()=>{const onScroll=()=>setProgress(scrollY/(document.documentElement.scrollHeight-innerHeight)*100);onScroll();addEventListener('scroll',onScroll,{passive:true});return()=>removeEventListener('scroll',onScroll)},[])
   return <>
     <div className="progress" style={{width:`${progress}%`}}/>
-    <header><a href="#home" className="logo">MINSOO<sup>©</sup></a><nav className={menu?'open':''}>{[['About','#about'],['Stack','#stack'],['Projects','#projects'],['Contact','#contact']].map(([t,h])=><a href={h} onClick={()=>setMenu(false)} key={t}>{t}</a>)}</nav><button aria-label="메뉴" onClick={()=>setMenu(!menu)}>{menu?<X/>:<Menu/>}</button></header>
+    <header><a href="#home" className="logo">MIN SOO CHO</a><nav className={menu?'open':''}>{[['About','#about'],['Strength','#stack'],['Career','#career'],['Projects','#projects'],['Contact','#contact']].map(([t,h])=><a href={h} onClick={()=>setMenu(false)} key={t}>{t}</a>)}</nav><button aria-label="메뉴" onClick={()=>setMenu(!menu)}>{menu?<X/>:<Menu/>}</button></header>
     <main>
       <section className="hero" id="home">
-        <div className="heroMeta"><span>PORTFOLIO / 2026</span><span>SEOUL, KR</span></div>
-        <div className="heroAside" aria-hidden="true"><span>MIN</span><i/><span>SOO</span></div>
-        <div className="heroTitle">
-          <div className="available"><i/> OPEN TO NEW OPPORTUNITIES</div>
-          <p>Frontend / Full Stack Developer</p>
-          <h1>실시간 데이터와<br/><em>상태 관리를</em> 설계하는<br/>개발자 조민수입니다.</h1>
-        </div>
-        <div className="heroTech" aria-label="주요 기술"><span>React</span><span>TypeScript</span><span>Java · Spring</span><span>WebSocket</span></div>
-        <div className="heroFoot"><p>화면과 서버 사이의 데이터 흐름을 이해하고,<br/>운영과 유지보수까지 고려한 제품을 만듭니다.</p><a href="#about" className="scroll"><span>EXPLORE</span><i><ArrowDown/></i></a></div>
-        <div className="heroMark" aria-hidden="true">M</div>
+        <div className="heroName" aria-label="Min Soo Cho"><span>MIN</span><span>SOO</span><span>CHO</span></div>
+        <div className="heroRoles" aria-hidden="true"><span>Frontend</span><span>React</span><span>TypeScript</span><span>Developer</span></div>
+        <div className="heroProfile"><strong>Developer</strong><p>조민수 · Frontend / Full Stack<br/>실시간 데이터와 상태 관리를 설계합니다.</p><div><a href="mailto:mschoyb@naver.com">EMAIL</a><a href="https://github.com/msckr" target="_blank" rel="noreferrer">GITHUB</a></div></div>
+        <a href="#about" className="scroll"><span>SCROLL</span><i><ArrowDown/></i></a>
       </section>
 
       <section className="intro" id="about"><div className="introGrid"><h2>화면 너머의<br/><span>흐름을 봅니다.</span></h2><div><p className="lead">요구사항을 데이터 구조로 바꾸고, 서버 상태와 화면 상태의 책임을 명확하게 나눕니다.</p><p>WebSocket 기반 실시간 데이터 처리, PostgreSQL 조회·업무 로직, 공통 컴포넌트 설계 경험을 바탕으로 운영과 유지보수를 고려한 구조를 구현합니다.</p><div className="career"><strong>2025.06 — NOW</strong><span>주식회사 유더블유에스<br/>기업부설연구소 · 풀스택 개발자</span></div></div></div></section>
 
       <section className="stack" id="stack"><div className="stackHead"><h2>도구보다 중요한 건<br/><em>어떻게 연결하는가.</em></h2><span>SELECT A CATEGORY</span></div><div className="tabs" role="tablist">{(Object.keys(skillTabs) as SkillKey[]).map(k=><button role="tab" aria-selected={active===k} className={active===k?'active':''} onClick={()=>setActive(k)} key={k}><span>{skillTabs[k].label}</span><small>{String(Object.keys(skillTabs).indexOf(k)+1).padStart(2,'0')}</small></button>)}</div><div className="skillPanel" role="tabpanel" key={active}><p>{skillTabs[active].eyebrow}</p><div>{skillTabs[active].skills.map((s,i)=><span style={{animationDelay:`${i*45}ms`}} key={s}>{s}</span>)}</div></div></section>
+
+      <section className="careerSection" id="career"><div className="careerTitle">Career. Career.</div><div className="careerRow"><h3>주식회사 유더블유에스</h3><p>기업부설연구소<br/><strong>Full Stack Developer</strong></p><span>2025.06 — NOW</span></div><div className="careerWorks"><article><span>2025.07 — 2025.12</span><h4>VETA 거래 플랫폼</h4><p>실시간 시세와 거래 현황을 연결하고 공통 컴포넌트와 모노레포 구조를 개선했습니다.</p></article><article><span>2026.01 — 2026.06</span><h4>그룹웨어 및 경비정산 시스템</h4><p>React와 Java·Spring으로 화면, REST API, 데이터 모델을 함께 설계했습니다.</p></article></div></section>
 
       <section className="projects" id="projects"><div className="projectIntro"><h2>문제를 발견하고,<br/>구조로 해결한 기록.</h2></div>{projects.map((p,i)=><article className={`project ${p.accent}`} key={p.title}><div className="projectSticky"><span>{p.index}</span><p>{p.type}</p></div><div className="projectBody"><div className="projectMeta"><span>{p.period}</span><span>{p.role}</span></div><h3>{p.title}</h3><p className="summary">{p.summary}</p><p className="projectStack">{p.stack}</p><ul>{p.points.map(x=><li key={x}>{x}</li>)}</ul>{p.link&&<a href={p.link} target="_blank" rel="noreferrer">VIEW REPOSITORY <ArrowUpRight/></a>}<span className="projectCount">{String(i+1).padStart(2,'0')} / {String(projects.length).padStart(2,'0')}</span></div></article>)}</section>
 
